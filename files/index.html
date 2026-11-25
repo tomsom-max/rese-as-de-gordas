@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fotos del Colegio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Fotos del Colegio</h1>
+    <p>Sube una foto, califícala con estrellas y deja tu comentario.</p>
+  </header>
+
+  <main>
+    <!-- Formulario para subir una foto nueva -->
+    <section class="subir">
+      <h2>Agregar una foto</h2>
+      <form id="formulario-foto">
+        <label for="archivo">Foto</label>
+        <input type="file" id="archivo" accept="image/*" required>
+
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" maxlength="40" placeholder="Ej: Patio central" required>
+
+        <button type="submit" id="boton-subir">Enviar foto</button>
+      </form>
+      <p class="aviso">
+        Sube fotos de lugares. Si aparece una persona, pide permiso
+        a ella y a su familia antes de enviarla. Un profesor revisa
+        cada foto antes de publicarla.
+      </p>
+    </section>
+
+    <!-- Mensajes para el usuario (éxito o error) -->
+    <p id="estado" class="estado" role="status"></p>
+
+    <!-- Aquí JavaScript dibuja las tarjetas -->
+    <section id="galeria" class="galeria" aria-live="polite"></section>
+    <p id="vacio" class="vacio" hidden>Todavía no hay fotos aprobadas.</p>
+  </main>
+
+  <!-- Librería de Supabase (la base de datos en la nube) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
